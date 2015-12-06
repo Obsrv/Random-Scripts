@@ -72,7 +72,7 @@ def runShellcode():
 def testShellCode():
     filename = 'shellTest_tmp'
     #Put shellcode in a file for ndisasm to read
-    subprocess.call("perl -e 'print " + '"' + commsI + '"' + "'" + " > " + filename, shell=True)
+    subprocess.call("perl -e 'print " + '"' + commInput + '"' + "'" + " > " + filename, shell=True)
     #Read from file
     output = subprocess.check_output("ndisasm -b 32" + " " + filename, shell=True)
     #Write output to a temporary file
